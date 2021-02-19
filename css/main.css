@@ -1,0 +1,347 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /*Убираем все отступы по умолчанию*/
+    font-family: 'Montserrat', sans-serif;
+    /*Указываем тип шрифта на всей странице*/
+    color: #000000;
+}
+
+.container {
+    max-width: 1110px;
+    /*Больше 1110 пкиселей контейней не станет*/
+    margin-left: auto;
+    /*Выравниваем по левому краю относительно блочной модели*/
+    margin-right: auto;
+    /*Выравниваем по правому краю относительно блочной модели*/
+}
+
+/***************
+	 Header
+****************/
+
+.header {
+    margin: 0;
+    /*Убираем отступы по умолчанию*/
+
+    display: flex;
+    /*Задаем флекс-бокс модель*/
+    flex-direction: column;
+    /*Выстраивает текст в колонку (основная ось Y)*/
+    justify-content: center;
+    /*Выравниваем вертикально по центру (по основной оси Y)*/
+    align-items: center;
+    /*Выравниваем горизонтально (по поперечной оси X)*/
+    position: relative;
+    /*Мы указываем, что он родитель для елементов,
+    которые лежат внури него и имеею свойство absolute*/
+
+    width: 100%;
+    /*Задаем ширину*/
+    height: 100vh;
+    /*vh - Это проценты от высоты окна*/
+
+    background-color: #556983;
+    /*Цвет фона*/
+    background-image: url("./../img/header/header-bg.jpg");
+    /*картинка на фоне*/
+    background-size: cover;
+    /*Заполняем блок изображением с помощью свойства cover*/
+    background-position: center;
+    /*Ставит изображение по центру*/
+}
+
+.header-title {
+    margin-bottom: 25px;
+    /*Оступ вниз*/
+
+    font-weight: 700;
+    /*Толщина шрифта*/
+    font-size: 56px;
+    /*Размер шрифта*/
+    line-height: 130%;
+    /*Высота строки 1.3 * 56 = 72.8*/
+
+    text-align: center;
+    /*Текст по центру*/
+
+    color: #FFFFFF;
+    /*Цвет*/
+}
+
+.header-subtitle {
+    margin: 0;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: 0.2em;
+    /*Расстояние между буквами*/
+    text-transform: uppercase;
+    /*Перевод текста в верхний регистр*/
+
+    color: #FFFFFF;
+}
+
+.header-arrow {
+    width: 48px;
+    height: 48px;
+
+    /*background-color: red;*/
+
+    position: absolute;
+    /*Размещаем его абсолютно, т.е поверх всего остального.
+    Можно сказать, что мы размещаем его на отдельный слой,
+    поверх всего остального*/
+    bottom: 30px;
+    /*Указываем, что он находиться снизу от своего родителя header,
+    и имеет оступ 30 пикселей*/
+    left: 50%;
+    /*Двигаем его влево на половину страницы*/
+    transform: translate(-50%, 0);
+    /*Мы пододвинем его отрицательно влево, ровно на половину его ширины*/
+}
+
+/***************
+	Portfolio
+****************/
+
+.portfolio {
+    padding-top: 80px;
+    /*Отступ сверху*/
+    padding-bottom: 155px;
+    /*Отступ снизу*/
+}
+
+.portfolio-header {
+    margin: 0;
+    margin-bottom: 70px;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 130%;
+    text-align: center;
+    color: #000000;
+}
+
+.portfolio-cards-wrapper {
+    display: flex;
+    /*Начинаем флексить. Краточки выстроились вряд*/
+    flex-wrap: wrap;
+    /*Перенос карточек на новую строку если надо*/
+    justify-content: space-between;
+}
+
+.card {
+    margin-bottom: 30px;
+    /*Делаем отсуп вниз у карточек на 30 пикселей*/
+    max-width: 540px;
+    background-color: #fff;
+    box-shadow: 0px 10px 40px rgba(126, 155, 189, 0.35);
+    /*Тень для блока*/
+    transition: transform 0.2s ease-in;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    /*Перемещение карточки вверх на 15 пикселей*/
+}
+
+.card-link {
+    color: black;
+    padding: 20px;
+    /*Внутренние отступы с каждой стороны*/
+    text-decoration: none;
+    display: block;
+    transition: color: 0.2s ease-in;
+}
+
+.card-link:hover {
+    color: rgb(39, 91, 236);
+}
+
+.card:last-child,
+.card:nth-last-child(2) {
+    /*Выбираем последнюю карточку и пред-последнюю карточку(Через запятую)*/
+    margin-bottom: 0;
+    /*Убираем отступ снизу*/
+}
+
+.card-img {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    margin: 0;
+    margin-bottom: 13px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 130%;
+}
+
+.card p {
+    /*Мы выбираем все теги "р" которые лежат в елементе с классом "card"*/
+    margin: 0;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+/***************
+	 Footer
+****************/
+
+.footer {
+    padding-top: 45px;
+    padding-bottom: 130px;
+    background: #1E4776;
+    color: #fff;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    max-width: 350px;
+    flex-grow: 1;
+    color: #7E9EC9;
+    line-height: 1.3;
+}
+
+.footer-copyright-name {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 130%;
+    margin-bottom: 15px;
+}
+
+.footer-copyright p {
+    margin: 0;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.footer-icons {
+    max-width: 350px;
+    flex-grow: 1;
+}
+
+.footer-icons p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.footer-icons-row {
+    display: flex;
+    align-items: center;
+}
+
+.footer-icons-row>*+* {
+    /*Мы выбираем начиная со 2-го тега, находящеегося на 1-м уровне сложенности,
+	внутри блока "footer-icons-row"*/
+    margin-left: 30px;
+}
+
+.footer-contacts {
+    max-width: 350px;
+    flex-grow: 1;
+}
+
+.footer-contacts p {
+    margin: 15px 0;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #7E9EC9;
+}
+
+.footer-button {
+    display: inline-block;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border: 3px solid #FFFFFF;
+    border-radius: 50px;
+    color: #fff;
+    line-height: 44px;
+
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: all 0.2s ease-in;
+}
+
+.footer-button:hover {
+    background-color: white;
+    color: #1E4776;
+}
+
+/***************
+	 Project
+****************/
+
+.project {
+    padding-top: 80px;
+    padding-bottom: 120px;
+    text-align: center;
+}
+
+.project-header {
+    margin: 0;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 1.3;
+}
+
+.project-img {
+    margin-bottom: 70px;
+}
+
+.project-description {
+    max-width: 730px;
+    margin-bottom: 60px;
+    margin: 0 auto;
+}
+
+.project-description p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.project-btn-back {
+    display: inline-block;
+    height: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    border: 3px solid #275BEC;
+    border-radius: 50px;
+    color: #275BEC;
+    line-height: 54px;
+
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    transition: all 0.2s ease-in;
+}
+
+.project-btn-back:hover {
+    background-color: #275BEC;
+    color: #fff;
+}
